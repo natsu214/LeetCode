@@ -14,12 +14,11 @@ public class MergeSort {
         }
         int mid = arr.length/2;
         int[] left = Arrays.copyOfRange(arr,0,mid);
-
         int[] right = Arrays.copyOfRange(arr,mid,arr.length);
         int[] merge = merge(mergeSort(left), mergeSort(right));
         return merge;
     }
-    public static int[] merge(int[] left,int[] right){
+    private static int[] merge(int[] left,int[] right){
         int[] result = new int[left.length+right.length];
         for(int index = 0,i=0,j=0;index<result.length;index++){
            if (i>=left.length){
